@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=M9-Kernel
+kernel.string=MI9-Kernel
 do.devicecheck=0
 do.modules=0
 do.systemless=0
@@ -64,6 +64,10 @@ case "$ZIPFILE" in
     ui_print "  • Setting 90 Hz refresh rate"
     patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=7"
     ;; 
+   *93fps*|*93hz*)
+    ui_print "  • Setting 93 Hz refresh rate"
+    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=8"
+    ;; 
   *)
     patch_cmdline "msm_drm.framerate_override" ""
     fr=$(cat /sdcard/framerate_override | tr -cd "[0-8]");
@@ -74,6 +78,7 @@ case "$ZIPFILE" in
     [ $fr -eq 81 ] && ui_print "  • Setting 81 Hz refresh rate" && patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=5"
     [ $fr -eq 84 ] && ui_print "  • Setting 84 Hz refresh rate" && patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=6"
     [ $fr -eq 90 ] && ui_print "  • Setting 90 Hz refresh rate" && patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=7"
+    [ $fr -eq 93 ] && ui_print "  • Setting 93 Hz refresh rate" && patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=8"
     ;;
 esac
 
