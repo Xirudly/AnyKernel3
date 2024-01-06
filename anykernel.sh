@@ -64,10 +64,6 @@ case "$ZIPFILE" in
     ui_print "  • Setting 90 Hz refresh rate"
     patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=7"
     ;; 
-   *93fps*|*93hz*)
-    ui_print "  • Setting 93 Hz refresh rate"
-    patch_cmdline "msm_drm.framerate_override" "msm_drm.framerate_override=8"
-    ;; 
   *)
     patch_cmdline "msm_drm.framerate_override" ""
     fr=$(cat /sdcard/framerate_override | tr -cd "[0-8]");
