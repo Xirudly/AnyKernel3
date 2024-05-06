@@ -12,6 +12,7 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=cepheus
 device.name2=raphael
+device.name3=crux
 supported.versions=11-14
 '; } # end properties
 
