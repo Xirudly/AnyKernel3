@@ -13,7 +13,7 @@ do.cleanuponabort=0
 device.name1=cepheus
 device.name2=raphael
 device.name3=crux
-supported.versions=11-14
+supported.versions=11-15
 '; } # end properties
 
 # shell variables
